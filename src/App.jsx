@@ -1,10 +1,18 @@
-import React from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import FormPage from "./pages/FormPage";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="">Complete Project Setup...</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/jobs/add-job" element={<FormPage />} />
+        <Route path="/jobs/edit-job" element={<FormPage />} />
+      </Routes>
+    </Router>
   );
 };
 
