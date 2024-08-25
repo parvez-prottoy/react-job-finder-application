@@ -15,14 +15,16 @@ const Sidebar = () => {
       <nav>
         <ul className="space-y-4">
           <li>
-            <button
-              onClick={() => setFilterValue("")}
-              className="main-menu menu-active"
-              id="lws-alljobs-menu"
-            >
-              <i className="fa-solid fa-briefcase"></i>
-              <span> All Available Jobs</span>
-            </button>
+            <Link to={"/"}>
+              <button
+                onClick={() => setFilterValue("")}
+                className="main-menu menu-active"
+                id="lws-alljobs-menu"
+              >
+                <i className="fa-solid fa-briefcase"></i>
+                <span> All Available Jobs</span>
+              </button>
+            </Link>
             <ul className="space-y-6 lg:space-y-2 ">
               <li>
                 <button
@@ -59,7 +61,7 @@ const Sidebar = () => {
             </ul>
           </li>
           <li>
-            <Link to="/jobs/add-job" className="main-menu" id="lws-addJob-menu">
+            <Link to="/jobs" className="main-menu" id="lws-addJob-menu">
               <i className="fa-solid fa-file-circle-plus"></i>
               <span>Add NewJob</span>
             </Link>

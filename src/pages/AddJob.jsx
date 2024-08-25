@@ -1,13 +1,13 @@
 import React from "react";
 import Layout from "../layout/Layout";
-import Form from "../components/Form";
+import AddForm from "../components/AddForm";
 
-const FormPage = () => {
+const AddJob = () => {
   return (
     <Layout>
-      <Form />
+      <AddForm />
     </Layout>
   );
 };
 
-export default FormPage;
+export default AddJob;

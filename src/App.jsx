@@ -1,7 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import FormPage from "./pages/FormPage";
+import AddJob from "./pages/AddJob";
+import EditJob from "./pages/EditJob";
 
 const App = () => {
   return (
@@ -9,8 +10,8 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/jobs/add-job" element={<FormPage />} />
-        <Route path="/jobs/edit-job" element={<FormPage />} />
+        <Route path="/jobs" element={<AddJob />} />
+        <Route path="/jobs/edit/:id" element={<EditJob />} />
       </Routes>
     </Router>
   );
