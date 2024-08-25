@@ -1,39 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Job = () => {
+const Job = ({ job }) => {
+  const { title, type, salary, deadline } = job || {};
   return (
-    <div class="lws-single-job">
-      <div class="flex-1 min-w-0">
-        <h2 class="lws-title">Back End Developer</h2>
-        <div class="job-footers">
-          <div class="lws-type">
-            <i class="fa-solid fa-stop !text-[#FF8A00] text-lg mr-1.5"></i>
-            Full-time
+    <div className="lws-single-job">
+      <div className="flex-1 min-w-0">
+        <h2 className="lws-title">{title}</h2>
+        <div className="job-footers">
+          <div className="lws-type">
+            <i
+              className={`fa-solid ${
+                (type === "Full Time" && "!text-[#FF8A00]") ||
+                (type === "Internship" && "!text-[#FF5757]") ||
+                (type === "Remote" && "!text-[#56E5C4]")
+              } fa-stop text-lg mr-1.5`}
+            ></i>
+            {type}
           </div>
-          <div class="lws-salary">
-            <i class="fa-solid fa-bangladeshi-taka-sign text-slate-400 text-lg mr-1.5"></i>
-            BDT 40,000
+          <div className="lws-salary">
+            <i className="fa-solid fa-bangladeshi-taka-sign text-slate-400 text-lg mr-1.5"></i>
+            BDT {salary}
           </div>
-          <div class="lws-deadline">
-            <i class="fa-regular fa-calendar text-slate-400 text-lg mr-1.5"></i>
-            Closing on 2022-12-31
+          <div className="lws-deadline">
+            <i className="fa-regular fa-calendar text-slate-400 text-lg mr-1.5"></i>
+            Closing on {deadline}
           </div>
         </div>
       </div>
-      <div class="mt-5 flex lg:mt-0 lg:ml-4">
-        <span class="hidden sm:block">
+      <div className="mt-5 flex lg:mt-0 lg:ml-4">
+        <span className="hidden sm:block">
           <Link to="/jobs/edit-job">
-            <button type="button" class="lws-edit btn btn-primary">
-              <i class="fa-solid fa-pen text-gray-300 -ml-1 mr-2"></i>
+            <button type="button" className="lws-edit btn btn-primary">
+              <i className="fa-solid fa-pen text-gray-300 -ml-1 mr-2"></i>
               Edit
             </button>
           </Link>
         </span>
 
-        <span class="sm:ml-3">
-          <button type="button" class="lws-delete btn btn-danger ">
-            <i class="fa-solid fa-trash text-gray-300 -ml-1 mr-2"></i>
+        <span className="sm:ml-3">
+          <button type="button" className="lws-delete btn btn-danger ">
+            <i className="fa-solid fa-trash text-gray-300 -ml-1 mr-2"></i>
             Delete
           </button>
         </span>
