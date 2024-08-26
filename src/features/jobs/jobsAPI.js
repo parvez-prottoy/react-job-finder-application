@@ -16,7 +16,8 @@ export const postJob = async (data) => {
 };
 // note: patch single job api
 export const patchJob = async ({ id, data }) => {
-  const res = await axios.get(`/jobs/${id}`, data);
+  console.log(id, data);
+  const res = await axios.patch(`/jobs/${id}`, data);
   return res.data;
 };
 // note: delete single job api

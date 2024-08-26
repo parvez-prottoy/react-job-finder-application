@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeJob } from "../features/jobs/jobsSlice";
+import { editingJob, removeJob } from "../features/jobs/jobsSlice";
 import toast from "react-hot-toast";
 
 const Job = ({ job }) => {
@@ -39,7 +39,11 @@ const Job = ({ job }) => {
       <div className="mt-5 flex lg:mt-0 lg:ml-4">
         <span className="hidden sm:block">
           <Link to={`/jobs/edit/${id}`}>
-            <button type="button" className="lws-edit btn btn-primary">
+            <button
+              onClick={() => dispatch(editingJob(job))}
+              type="button"
+              className="lws-edit btn btn-primary"
+            >
               <i className="fa-solid fa-pen text-gray-300 -ml-1 mr-2"></i>
               Edit
             </button>

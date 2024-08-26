@@ -1,18 +1,3 @@
 {
-  "jobs": [
-    {
-      "title": "DevOps Engineer",
-      "type": "Internship",
-      "salary": "25002",
-      "deadline": "2024-12-31",
-      "id": 2
-    },
-    {
-      "title": "Social Media Manager",
-      "type": "Internship",
-      "salary": "20000",
-      "deadline": "2023-11-30",
-      "id": 5
-    }
-  ]
+  "jobs": []
 }
